@@ -1,91 +1,91 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ja-JP">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
   <meta http-equiv="Content-Language" content="ja-JP">
   <link rel="stylesheet" type="text/css" href="rhg.css">
   <link rev="made" href="mailto:aamine@loveruby.net">
-<title>Ruby$B%=!<%9%3!<%I40A42r@b(B</title></head>
+<title>Rubyソースコード完全解説</title></head>
 <body>
 
-<h1>Ruby$B%=!<%9%3!<%I40A42r@b(B</h1>
+<h1>Rubyソースコード完全解説</h1>
 <p>
 $Id: index.html,v 1.6 2004/07/20 23:08:12 aamine Exp $
 </p>
 <p>
-$B$3$NJ8=q$O=q@R!X(BRuby$B%=!<%9%3!<%I40A42r@b!Y$N(BHTML$BHG$G$9!#(B
-$B$?$@$7=i9;CJ3,$N869F$r%Y!<%9$K$7$F$$$k$?$a!"(B
-$B=q@R$G$O=$@5$5$l$F$$$k4V0c$$$,;D$C$F$$$k>l9g$,$"$j$^$9!#(B
-$BM=$a8fN;>5$/$@$5$$!#(B
+この文書は書籍『Rubyソースコード完全解説』のHTML版です。
+ただし初校段階の原稿をベースにしているため、
+書籍では修正されている間違いが残っている場合があります。
+予め御了承ください。
 </p>
 <p>
-2004-02-16 $B$KA4>O$r8x3+$7$^$7$?!#(B
+2004-02-16 に全章を公開しました。
 </p>
 
-<h2>$BL\<!(B</h2>
+<h2>目次</h2>
 <ul>
-<li><a href="preface.html">$B$^$($,$-(B</a></li>
-<li><a href="intro.html">$B=x>O(B</a></li>
+<li><a href="preface.html">まえがき</a></li>
+<li><a href="intro.html">序章</a></li>
 </ul>
 
-<h3>$BBh(B 1 $BIt!V%*%V%8%'%/%H!W(B</h3>
+<h3>第 1 部「オブジェクト」</h3>
 <ul>
-<li><a href="minimum.html">$BBh(B 1 $B>O!V(BRuby$B8@8l%_%K%^%`!W(B</a></li>
-<li><a href="object.html">$BBh(B 2 $B>O!V%*%V%8%'%/%H!W(B</a></li>
-<li><a href="name.html">$BBh(B 3 $B>O!VL>A0$HL>A0I=!W(B</a></li>
-<li><a href="class.html">$BBh(B 4 $B>O!V%/%i%9!W(B</a></li>
-<li><a href="gc.html">$BBh(B 5 $B>O!V%,!<%Y!<%8%3%l%/%7%g%s!W(B</a></li>
-<li><a href="variable.html">$BBh(B 6 $B>O!VJQ?t$HDj?t!W(B</a></li>
-<li><a href="security.html">$BBh(B 7 $B>O!V%;%-%e%j%F%#!W(B</a></li>
+<li><a href="minimum.html">第 1 章「Ruby言語ミニマム」</a></li>
+<li><a href="object.html">第 2 章「オブジェクト」</a></li>
+<li><a href="name.html">第 3 章「名前と名前表」</a></li>
+<li><a href="class.html">第 4 章「クラス」</a></li>
+<li><a href="gc.html">第 5 章「ガーベージコレクション」</a></li>
+<li><a href="variable.html">第 6 章「変数と定数」</a></li>
+<li><a href="security.html">第 7 章「セキュリティ」</a></li>
 </ul>
 
-<h3>$BBh(B 2 $BIt!V9=J82r@O!W(B</h3>
+<h3>第 2 部「構文解析」</h3>
 <ul>
-<li><a href="spec.html">$BBh(B 8 $B>O!V(BRuby$B8@8l$N>\:Y!W(B</a></li>
-<li><a href="yacc.html">$BBh(B 9 $B>O!VB.=,(Byacc$B!W(B</a></li>
-<li><a href="parser.html">$BBh(B 10 $B>O!V%Q!<%5!W(B</a></li>
-<li><a href="contextual.html">$BBh(B 11 $B>O!V>uBVIU$-%9%-%c%J!W(B</a></li>
-<li><a href="syntree.html">$BBh(B 12 $B>O!V9=J8LZ$N9=C[!W(B</a></li>
+<li><a href="spec.html">第 8 章「Ruby言語の詳細」</a></li>
+<li><a href="yacc.html">第 9 章「速習yacc」</a></li>
+<li><a href="parser.html">第 10 章「パーサ」</a></li>
+<li><a href="contextual.html">第 11 章「状態付きスキャナ」</a></li>
+<li><a href="syntree.html">第 12 章「構文木の構築」</a></li>
 </ul>
 
-<h3>$BBh(B 3 $BIt!VI>2A!W(B</h3>
+<h3>第 3 部「評価」</h3>
 <ul>
-<li><a href="evaluator.html">$BBh(B 13 $B>O!VI>2A4o$N9=B$!W(B</a></li>
-<li><a href="module.html">$BBh(B 14 $B>O!V%3%s%F%-%9%H!W(B</a></li>
-<li><a href="method.html">$BBh(B 15 $B>O!V%a%=%C%I!W(B</a></li>
-<li><a href="iterator.html">$BBh(B 16 $B>O!V%V%m%C%/!W(B</a></li>
-<li><a href="anyeval.html">$BBh(B 17 $B>O!VF0E*I>2A!W(B</a></li>
+<li><a href="evaluator.html">第 13 章「評価器の構造」</a></li>
+<li><a href="module.html">第 14 章「コンテキスト」</a></li>
+<li><a href="method.html">第 15 章「メソッド」</a></li>
+<li><a href="iterator.html">第 16 章「ブロック」</a></li>
+<li><a href="anyeval.html">第 17 章「動的評価」</a></li>
 </ul>
 
-<h3>$BBh(B 4 $BIt!VI>2A4o$N<~JU!W(B</h3>
+<h3>第 4 部「評価器の周辺」</h3>
 <ul>
-<li><a href="load.html">$BBh(B 18 $B>O!V%m!<%I!W(B</a></li>
-<li><a href="thread.html">$BBh(B 19 $B>O!V%9%l%C%I!W(B</a></li>
+<li><a href="load.html">第 18 章「ロード」</a></li>
+<li><a href="thread.html">第 19 章「スレッド」</a></li>
 </ul>
 
 <ul>
-<li><a href="fin.html">$B=*>O(B</a></li>
+<li><a href="fin.html">終章</a></li>
 </ul>
 
-<h2>$B%i%$%;%s%9$J$I(B</h2>
+<h2>ライセンスなど</h2>
 <p>
-$B$3$NJ8=q$O%*%s%i%$%s$^$?$O%*%U%i%$%s$G(B ($B%@%&%s%m!<%I$7$F(B)$B!"(B
-$B8D?M$NHO0O$G$4MxMQ$/$@$5$$!#JQ99$*$h$S:FG[I[$O6X;_$G$9!#(B
+この文書はオンラインまたはオフラインで (ダウンロードして)、
+個人の範囲でご利用ください。変更および再配布は禁止です。
 </p>
 <p>
-$B$3$NJ8=q$X$N%O%$%Q!<%j%s%/$O%j%s%/@h$rLd$o$:8f<+M3$K$J$5$C$F$/$@$5$$!#(B
-$BJs9p$O0l@ZITMW$G$9!#(B
+この文書へのハイパーリンクはリンク先を問わず御自由になさってください。
+報告は一切不要です。
 </p>
 
 <hr>
 <p>
-$B8f0U8+!&8f46A[!&8m?#$N;XE&$J$I$O(B
-<a href="mailto:aamine@loveruby.net">$B@DLZJvO:(B &lt;aamine@loveruby.net&gt;</a>
-$B$^$G$*4j$$$7$^$9!#(B
+御意見・御感想・誤殖の指摘などは
+<a href="mailto:aamine@loveruby.net">青木峰郎 &lt;aamine@loveruby.net&gt;</a>
+までお願いします。
 </p>
 <p>
-<a href="http://direct.ips.co.jp/directsys/go_x_TempChoice.cfm?sh_id=EE0040&amp;spm_id=1&amp;GM_ID=1721">$B!X(BRuby$B%=!<%9%3!<%I40A42r@b!Y(B
-$B$O%$%s%W%l%9%@%$%l%/%H$G8fM=Ls!&8f9XF~$$$?$@$1$^$9(B ($B=q@R>R2p%Z!<%8$XHt$S$^$9(B)$B!#(B</a>
+<a href="http://direct.ips.co.jp/directsys/go_x_TempChoice.cfm?sh_id=EE0040&amp;spm_id=1&amp;GM_ID=1721">『Rubyソースコード完全解説』
+はインプレスダイレクトで御予約・御購入いただけます (書籍紹介ページへ飛びます)。</a>
 </p>
 <p>Copyright (c) 2002-2004 Minero Aoki, All rights reserved.</p>
 
