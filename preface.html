@@ -5,197 +5,197 @@
   <meta http-equiv="Content-Language" content="ja-JP">
   <link rel="stylesheet" type="text/css" href="rhg.css">
   <link rev="made" href="mailto:aamine@loveruby.net">
-<title>$B$O$8$a$K(B</title></head>
+<title>Introduction</title></head>
 <body>
 
-<h2>$B$O$8$a$K(B</h2>
+<h2>Introduction</h2>
 
 <p>
-$BK\=q$N%F!<%^$O$$$/$D$+$"$k!#(B
+本書のテーマはいくつかある。
 </p>
 
 <ul>
-<li><code>ruby</code>$B$N9=B$$rCN$k$3$H(B</li>
-<li>$B8@8l=hM}7O0lHL$K$D$$$F$NCN<1$r?H$KIU$1$k$3$H(B</li>
-<li>$B%=!<%9%3!<%I$rFI$`5;=Q$r?H$KIU$1$k$3$H(B</li>
+<li><code>ruby</code>の構造を知ること</li>
+<li>言語処理系一般についての知識を身に付けること</li>
+<li>ソースコードを読む技術を身に付けること</li>
 </ul>
 
 <p>
-Ruby$B$H$O$^$D$b$H$f$-$R$m;a$N<j$K$h$C$F3+H/$5$l$?%*%V%8%'%/%H;X8~8@8l$G(B
-$B$"$k!#(B<code>ruby</code>$B$O$=$N(BRuby$B8@8l$N8x<0<BAu$G$"$j!"%3%_%e%K%F%#%Y!<%9$G3hH/$K(B
-$B3+H/$,?J$a$i$l$F$$$k!#$=$N(B<code>ruby</code>$B$NFbIt9=B$$rL@$i$+$K$9$k$N$,Bh0l$NL\I8$@!#(B
-$B$3$NK\$rDL$7$F(B<code>ruby</code>$B$NA4KF$rL@$i$+$K$7$h$&!#(B
+Rubyとはまつもとゆきひろ氏の手によって開発されたオブジェクト指向言語で
+ある。<code>ruby</code>はそのRuby言語の公式実装であり、コミュニティベースで活発に
+開発が進められている。その<code>ruby</code>の内部構造を明らかにするのが第一の目標だ。
+この本を通して<code>ruby</code>の全貌を明らかにしよう。
 </p>
 
 <p>
-$B$^$?(BRuby$B$N=hM}7O$K$D$$$FCN$k$3$H$O8@8l=hM}7O0lHL$NCN<1$K$b$D$J$,$k!#%O%C(B
-$B%7%e%F!<%V%k!"%9%-%c%J$H%Q!<%5!"I>2A$N<jK!$J$I$J$I!"8@8l$r<BAu$9$k$N$K(B
-$BI,MW$J$b$N$OA4$F@9$j9~$s$@!#K\=q$O652J=q$G$O$J$$$N$G$"$i$f$kJ,Ln!&35G0(B
-$B$rO3$l$J$/?T$/$9$H$$$&$o$1$K$O$$$+$J$+$C$?$,!"$7$+$7!"8@8l=hM}7O$N9|3J(B
-$B$K$"$?$kItJ,$O==J,$K2r@b$7$F$"$k!#$^$?(BRuby$B8@8l<+BN$K$D$$$F$b4JC1$J$^$H(B
-$B$a$rA^F~$7!"(BRuby$B$rCN$i$J$$FI<T$K$bFI$a$k$h$&G[N8$7$?!#(B
+またRubyの処理系について知ることは言語処理系一般の知識にもつながる。ハッ
+シュテーブル、スキャナとパーサ、評価の手法などなど、言語を実装するのに
+必要なものは全て盛り込んだ。本書は教科書ではないのであらゆる分野・概念
+を漏れなく尽くすというわけにはいかなかったが、しかし、言語処理系の骨格
+にあたる部分は十分に解説してある。またRuby言語自体についても簡単なまと
+めを挿入し、Rubyを知らない読者にも読めるよう配慮した。
 </p>
 
 <p>
-$B$5$F!"L\E*$NBh0lE@!"BhFsE@$O3N$+$K$=$NDL$j$G$"$k$7!"K\=q$N%a%$%s%F!<%^(B
-$B$G$"$k!#$@$,<B$OI.<T$,:G$b6/D4$7$F$*$-$?$$$N$O;0E@L\!"!V%=!<%9%3!<%I$r(B
-$BFI$`5;=Q$r?H$KIU$1$k$3$H!W$J$N$@!#8@$C$F$_$k$HN"%F!<%^$G$"$k!#$I$&$7$F(B
-$B$3$l$,I,MW$@$H;W$C$?$N$+!"@bL@$7$h$&!#(B
+さて、目的の第一点、第二点は確かにその通りであるし、本書のメインテーマ
+である。だが実は筆者が最も強調しておきたいのは三点目、「ソースコードを
+読む技術を身に付けること」なのだ。言ってみると裏テーマである。どうして
+これが必要だと思ったのか、説明しよう。
 </p>
 
 <p>
-$B!V%W%m%0%i%_%s%0$K=,=O$9$k$?$a$K$OB>?M$N%=!<%9%3!<%I$rFI$a!W$H$$$&$3$H(B
-$B$O$h$/8@$o$l$k!#3N$+$K$=$NDL$j$J$N$@!#$7$+$7!V$G$O<B:]$K$I$&$7$?$i$$$$(B
-$B$N$+!W$H$$$&Ld$$$KEz$($F$/$l$kK\$O8+$?$3$H$,$J$$!#(BOS$B$N%+!<%M%k$d8@8l=h(B
-$BM}7O$NFbIt$r2r@b$7$?K\$O2?:}$b$"$k$,!"$=$3$K$O$$$-$J$j9=B$$,!"$D$^$jEz(B
-$B$($,!"=q$$$F$"$k$@$1$G!"$=$NEz$($r$I$&$d$C$FC5$9$Y$-$+=q$$$F$$$J$$$N$@!#(B
-$B$3$l$OL@$i$+$KJR<jMn$A$G$"$k!#(B
+「プログラミングに習熟するためには他人のソースコードを読め」ということ
+はよく言われる。確かにその通りなのだ。しかし「では実際にどうしたらいい
+のか」という問いに答えてくれる本は見たことがない。OSのカーネルや言語処
+理系の内部を解説した本は何冊もあるが、そこにはいきなり構造が、つまり答
+えが、書いてあるだけで、その答えをどうやって探すべきか書いていないのだ。
+これは明らかに片手落ちである。
 </p>
 
 <p>
-$B$=$l$H$b%W%m%0%i%`$rFI$`$H$$$&$3$H$O!"%W%m%0%i%`$r=q$1$k?M4V$J$iEvA3$G(B
-$B$-$k$3$H$J$N$@$m$&$+!#<B$O%3!<%I$rFI$`$N$O$H$F$b4JC1$G!"@$$NCf$N?MC#$O(B
-$BC/$b$,M>M5$G?M$N%3!<%I$rFI$a$F$7$^$C$F$$$k$N$@$m$&$+!#$=$&$O;W$($J$$!#(B
-$B%W%m%0%i%`$rFI$`$N$O3N$+$K!"%W%m%0%i%`$r=q$/$N$HF1$8$/$i$$Fq$7$$$3$H$J(B
-$B$N$@!#(B
+それともプログラムを読むということは、プログラムを書ける人間なら当然で
+きることなのだろうか。実はコードを読むのはとても簡単で、世の中の人達は
+誰もが余裕で人のコードを読めてしまっているのだろうか。そうは思えない。
+プログラムを読むのは確かに、プログラムを書くのと同じくらい難しいことな
+のだ。
 </p>
 
 <p>
-$B$=$3$GK\=q$G$O(B<code>ruby</code>$B$r2r@b$9$k$K$7$F$b$?$@4{CN$N$b$N$H$7$F2r@b$9$k$N$G(B
-$B$O$J$/!"2r@O$9$k2aDx$r$G$-$k$@$1@8!9$7$/>R2p$9$k$3$H$K$7$?!#I.(B
-$B<T$O(BRuby$B8@8l<+BN$K$D$$$F$O$=$l$J$j$KOS$K3P$($,$"$k$b$N$N!"<9I.3+;O;~E@(B
-$B$G$O(B<code>ruby</code>$B$NFbIt9=B$$K$D$$$F40A4$KM}2r$7$F$$$k$o$1$G$O$J$+$C$?!#$D$^$j(B
-<code>ruby</code>$B$NCf?H$K4X$7$F$O$G$-$k$@$1FI<T$H6a$$N)>l$+$i=PH/$7$?$N$@!#$=$3(B
-$B$+$i;O$a$?2r@O$N2aDx$H$=$N7k2L$r$^$H$a$?$N$,K\=q$G$"$k!#(B
+そこで本書では<code>ruby</code>を解説するにしてもただ既知のものとして解説するので
+はなく、解析する過程をできるだけ生々しく紹介することにした。筆
+者はRuby言語自体についてはそれなりに腕に覚えがあるものの、執筆開始時点
+では<code>ruby</code>の内部構造について完全に理解しているわけではなかった。つまり
+<code>ruby</code>の中身に関してはできるだけ読者と近い立場から出発したのだ。そこ
+から始めた解析の過程とその結果をまとめたのが本書である。
 </p>
 
 <p>
-$B$J$*!"(B<code>ruby</code>$B$N:n<T$N$^$D$b$H$f$-$R$m;a<+?H$K4F=$$r$7$F$$$?$@$$$?$N$@$,!"(B
-$BK\?M$K%A%'%C%/$7$F$b$i$$$J$,$i2r@O$7$F$$$?$N$G$OK\=q$N!V@8!9$7$5!W$,<:(B
-$B$o$l$F$7$^$&!#$=$N$?$a4F=$::FI$O<9I.$N:G=*CJ3,$+$i$H8BDj$7$?!#$3$l$K$h$C(B
-$B$F!"%=!<%9%3!<%I$rFI$s$G$$$/NW>l46$r<:$&$3$H$J$/FbMF$N3N$+$5$bF1;~$K3N(B
-$BJ]$G$-$?$H;W$&!#(B
+なお、<code>ruby</code>の作者のまつもとゆきひろ氏自身に監修をしていただいたのだが、
+本人にチェックしてもらいながら解析していたのでは本書の「生々しさ」が失
+われてしまう。そのため監修査読は執筆の最終段階からと限定した。これによっ
+て、ソースコードを読んでいく臨場感を失うことなく内容の確かさも同時に確
+保できたと思う。
 
 <p>
-$B@5D>$K8@$C$F!"$3$NK\$O0W$7$/$O$J$$!#>/$J$/$H$b!"BP>]$N;}$DK\<AE*$JFq$7(B
-$B$50J>e$K$O0W$7$/$O$J$C$F$$$J$$!#$7$+$7!"$@$+$i$3$=K\=q$OLLGr$$!J$+$b$7(B
-$B$l$J$$!K$N$@!#<+J,$NG=NO$h$jNt$k$b$N$P$+$jAj<j$K$7$FLLGr$$$o$1$,$J$$!#(B
-$B8+$?=V4V$KEz$($,$o$+$k%Q%:%k$r2r$/E[$O$$$J$$!#H>J,$GHH?M$,$o$+$k?dM}>.(B
-$B@b$O$D$^$i$J$$!#G=NO$r%.%j%.%j$^$G;H$$@Z$jLdBj$r2r$$$F$3$=K\Ev$KCN<1$r(B
-$B<+J,$N$b$N$K$G$-$k!#K\=q$O$=$s$JM}A[O@$r%P%+$_$?$$$K<BA)$7$?K\$G$"$k!#(B
-$B!VFq$7$$$+$iLLGr$$!#!WK\=q$rDL$8!"$=$&;W$C$F$/$l$k?M$,0l?M$G$bA}$($F$/(B
-$B$l$?$i4r$7$$!#(B
-</p>
-
-
-
-
-
-<h2>$BBP>]$H$9$kFI<T(B</h2>
-
-<p>
-$B$^$:(BRuby$B8@8l$NCN<1$OA0Ds$H$7$J$$!#$@$,9=B$$N2r@b$N$?$a$K$O$I$&$7$F$b(B
-Ruby$B8@8l$NCN<1$,I,MW$K$J$k$?$a!"2r@b$N>O$r$$$/$D$+69$s$GJd$C$F$"$k!#(B
-</p>
-
-<p>
-C$B8@8l$K$D$$$F$O$=$l$J$j$NCN<1$,I,MW$G$"$k!#9=B$BN$r<B9T;~$K(B<code>malloc()</code>
-$B$G3d$jEv$F$F%j%9%H$d%9%?%C%/$r:n$k$3$H$,$G$-!"4X?t%]%$%s%?$r2?EY$+$/$i(B
-$B$$$O;H$C$?$3$H$,$"$k!"$H$$$&DxEY$rA0Ds$H$7$?!#(B
-</p>
-
-<p>
-$B$^$?%*%V%8%'%/%H;X8~$N4pAC$K$D$$$F$b$"$^$j??LLL\$K$O@bL@$7$J$$$N$G!"$J(B
-$B$s$i$+$N%*%V%8%'%/%H;X8~8@8l$O;H$C$?$3$H$,$J$$$H6l$7$$$@$m$&!#K\J8Cf$G(B
-$B$O(BJava/C++$B$G$NNc$($rB?$/;H$&$h$&?43]$1$?!#(B
+正直に言って、この本は易しくはない。少なくとも、対象の持つ本質的な難し
+さ以上には易しくはなっていない。しかし、だからこそ本書は面白い（かもし
+れない）のだ。自分の能力より劣るものばかり相手にして面白いわけがない。
+見た瞬間に答えがわかるパズルを解く奴はいない。半分で犯人がわかる推理小
+説はつまらない。能力をギリギリまで使い切り問題を解いてこそ本当に知識を
+自分のものにできる。本書はそんな理想論をバカみたいに実践した本である。
+「難しいから面白い。」本書を通じ、そう思ってくれる人が一人でも増えてく
+れたら嬉しい。
 </p>
 
 
 
 
-<h2>$BK\=q$N9=@.(B</h2>
+
+<h2>対象とする読者</h2>
 
 <p>
-$BK\=q$N<gMWItJ,$O;MIt9=@.$K$J$C$F$$$k!#(B
+まずRuby言語の知識は前提としない。だが構造の解説のためにはどうしても
+Ruby言語の知識が必要になるため、解説の章をいくつか狭んで補ってある。
+</p>
+
+<p>
+C言語についてはそれなりの知識が必要である。構造体を実行時に<code>malloc()</code>
+で割り当ててリストやスタックを作ることができ、関数ポインタを何度かくら
+いは使ったことがある、という程度を前提とした。
+</p>
+
+<p>
+またオブジェクト指向の基礎についてもあまり真面目には説明しないので、な
+んらかのオブジェクト指向言語は使ったことがないと苦しいだろう。本文中で
+はJava/C++での例えを多く使うよう心掛けた。
+</p>
+
+
+
+
+<h2>本書の構成</h2>
+
+<p>
+本書の主要部分は四部構成になっている。
 </p>
 
 <table>
-<tr><td>$BBh(B1$BIt!X%*%V%8%'%/%H!Y(B<td></tr>
-<tr><td>$BBh(B2$BIt!X9=J82r@O!Y(B<td></tr>
-<tr><td>$BBh(B3$BIt!XI>2A!Y(B<td></tr>
-<tr><td>$BBh(B4$BIt!XI>2A4o$N<~JU!Y(B<td></tr>
+<tr><td>第1部『オブジェクト』<td></tr>
+<tr><td>第2部『構文解析』<td></tr>
+<tr><td>第3部『評価』<td></tr>
+<tr><td>第4部『評価器の周辺』<td></tr>
 </table>
 
 <p>
-$B$G$"$k!#3FIt$NF,$G$OE,594pACCN<1$rJd$&$?$a$N>O$rA^F~$7!"(B
-$B8@8l=hM}7O$N;EAH$_$d(BRuby$B$KFk@w$_$,$J$$J}$G$bFI$a$k$h$&G[N8$7$?!#(B
+である。各部の頭では適宜基礎知識を補うための章を挿入し、
+言語処理系の仕組みやRubyに馴染みがない方でも読めるよう配慮した。
 </p>
 
 <p>
-$B$G$O$=$N<gMW;MIt$N9=@.$r0J2<$K<($9!#@bL@$N$"$H$K3g8LIU$-$GF~$C$F(B
-$B$$$k5-9f$OFq0WEY$rI=$7$F$$$k!#(BC B A$B$HFq$7$/$J$j(BS$B$,:G9bFqEY$G$"$k!#(B
+ではその主要四部の構成を以下に示す。説明のあとに括弧付きで入って
+いる記号は難易度を表している。C B Aと難しくなりSが最高難度である。
 </p>
 
-<h4>$BBh(B1$BIt(B $B%*%V%8%'%/%H(B</h4>
+<h4>第1部 オブジェクト</h4>
 
 <table>
-<tr><td>$BBh(B1$B>O(B<td><td>$BBh(B1$BIt$rFI$`$N$KI,MW$K$J$k(BRuby$B$N4pACItJ,$@$1$rOC$9!#!J(BC$B!K(B<td></tr>
-<tr><td>$BBh(B2$B>O(B<td><td>Ruby$B%*%V%8%'%/%H$N6qBNE*$JFbIt9=B$$r2r@b$9$k!#!J(BC$B!K(B<td></tr>
-<tr><td>$BBh(B3$B>O(B<td><td>$B%O%C%7%e%F!<%V%k$K$D$$$FOC$9!#!J(BC$B!K(B<td></tr>
-<tr><td>$BBh(B4$B>O(B<td><td>Ruby$B$N%/%i%9%7%9%F%`$K$D$$$F=R$Y$k!#$3$N>O$OCj>]E*$JOC$,B?$$$N$G:G=i$O7Z$/FI$_N.$7$F$b$i$C$F$b$h$$!#!J(BA$B!K(B<td></tr>
-<tr><td>$BBh(B5$B>O(B<td><td>$B%*%V%8%'%/%H$N@8@.$H2rJ|$r;J$k%,!<%Y!<%8%3%l%/%?$r8+$k!#Dc?e=`%7%j!<%:Bh0lOC!#!J(BB$B!K(B<td></tr>
-<tr><td>$BBh(B6$B>O(B<td><td>$B%0%m!<%P%kJQ?t!&%/%i%9JQ?t!&Dj?t$N<BAu$r2r@b$9$k!#!J(BC$B!K(B<td></tr>
-<tr><td>$BBh(B7$B>O(B<td><td>Ruby$B$N%;%-%e%j%F%#5!G=$NBgOH$K$D$$$F!#!J(BC$B!K(B<td></tr>
+<tr><td>第1章<td><td>第1部を読むのに必要になるRubyの基礎部分だけを話す。（C）<td></tr>
+<tr><td>第2章<td><td>Rubyオブジェクトの具体的な内部構造を解説する。（C）<td></tr>
+<tr><td>第3章<td><td>ハッシュテーブルについて話す。（C）<td></tr>
+<tr><td>第4章<td><td>Rubyのクラスシステムについて述べる。この章は抽象的な話が多いので最初は軽く読み流してもらってもよい。（A）<td></tr>
+<tr><td>第5章<td><td>オブジェクトの生成と解放を司るガーベージコレクタを見る。低水準シリーズ第一話。（B）<td></tr>
+<tr><td>第6章<td><td>グローバル変数・クラス変数・定数の実装を解説する。（C）<td></tr>
+<tr><td>第7章<td><td>Rubyのセキュリティ機能の大枠について。（C）<td></tr>
 </table>
 
-<h4>$BBh(B2$BIt(B $B9=J82r@O(B</h4>
+<h4>第2部 構文解析</h4>
 
 <table>
-<tr><td>$BBh(B8$B>O(B<td><td>$BBh(B2$BIt!&Bh(B3$BIt$KHw$((BRuby$B8@8l$N$[$\40A4$J;EMM$K$D$$$FOC$9!#!J(BC$B!K(B<td></tr>
-<tr><td>$BBh(B9$B>O(B<td><td>$BJ8K!%U%!%$%k$rFI$`$N$KI,MW$J:GDc8B$N(B<code>yacc</code>$B$NCN<1$r@bL@$9$k!#!J(BB$B!K(B<td></tr>
-<tr><td>$BBh(B10$B>O(B<td><td>$B%Q!<%5$NJ*M}9=B$$H5,B'$rFI$`!#!J(BA$B!K(B<td></tr>
-<tr><td>$BBh(B11$B>O(B<td><td>$B%Q!<%5$NFq=j(B<code>lex_state</code>$B$N<~JU$rC5:w$9$k!#K\=q:GFq4X!#!J(BS$B!K(B<td></tr>
-<tr><td>$BBh(B12$B>O(B<td><td>$BBh(B2$BIt$NAm;E>e$2$HBh(B3$BIt$X$NO"7k!#!J(BC$B!K(B<td></tr>
+<tr><td>第8章<td><td>第2部・第3部に備えRuby言語のほぼ完全な仕様について話す。（C）<td></tr>
+<tr><td>第9章<td><td>文法ファイルを読むのに必要な最低限の<code>yacc</code>の知識を説明する。（B）<td></tr>
+<tr><td>第10章<td><td>パーサの物理構造と規則を読む。（A）<td></tr>
+<tr><td>第11章<td><td>パーサの難所<code>lex_state</code>の周辺を探索する。本書最難関。（S）<td></tr>
+<tr><td>第12章<td><td>第2部の総仕上げと第3部への連結。（C）<td></tr>
 </table>
 
-<h4>$BBh(B3$BIt(B $BI>2A(B</h4>
+<h4>第3部 評価</h4>
 
 <table>
-<tr><td>$BBh(B13$B>O(B<td><td>$BI>2A4o$N4pK\E*$J;EAH$_$D$$$F=R$Y$k!#!J(BC$B!K(B<td></tr>
-<tr><td>$BBh(B14$B>O(B<td><td>Ruby$B$N%a%$%s%3%s%F%-%9%H$r:n$j$@$9I>2A4o%9%?%C%/$rFI$`!#!J(BA$B!K(B<td></tr>
-<tr><td>$BBh(B15$B>O(B<td><td>$B%a%=%C%I$NC5:w$H5/F0$K$D$$$FOC$9!#!J(BB$B!K(B<td></tr>
-<tr><td>$BBh(B16$B>O(B<td><td>Ruby$B:GBg$NFCD'!"%$%F%l!<%?$N<BAu$KD)$`!#!J(BA$B!K(B<td></tr>
-<tr><td>$BBh(B17$B>O(B<td><td>eval$B7O%a%=%C%I$N<BAu$r2r@b$9$k!#!J(BB$B!K(B<td></tr>
+<tr><td>第13章<td><td>評価器の基本的な仕組みついて述べる。（C）<td></tr>
+<tr><td>第14章<td><td>Rubyのメインコンテキストを作りだす評価器スタックを読む。（A）<td></tr>
+<tr><td>第15章<td><td>メソッドの探索と起動について話す。（B）<td></tr>
+<tr><td>第16章<td><td>Ruby最大の特徴、イテレータの実装に挑む。（A）<td></tr>
+<tr><td>第17章<td><td>eval系メソッドの実装を解説する。（B）<td></tr>
 </table>
 
-<h4>$BBh(B4$BIt(B $BI>2A4o$N<~JU(B</h4>
+<h4>第4部 評価器の周辺</h4>
 
 <table>
-<tr><td>$BBh(B18$B>O(B<td><td>Ruby$B$H(BC$B$N%i%$%V%i%j$N<B9T;~%m!<%I$K$D$$$F!#!J(BB$B!K(B<td></tr>
-<tr><td>$BBh(B19$B>O(B<td><td>$B%3%":G=*>O$O%9%l%C%I$N<BAu$K$D$$$F=R$Y$k!#!J(BA$B!K(B<td></tr>
+<tr><td>第18章<td><td>RubyとCのライブラリの実行時ロードについて。（B）<td></tr>
+<tr><td>第19章<td><td>コア最終章はスレッドの実装について述べる。（A）<td></tr>
 </table>
 
 
 
 
-<h2>$B4D6-(B</h2>
+<h2>環境</h2>
 
 <p>
-$BK\=q$G2r@b$9$k$N$O(B<code>ruby</code> 1.7.3 2002-09-12$BHG$G$"$k!#$3$NHG$O(B
-$B%"!<%+%$%V$rE:IU(BCD-ROM$B$K<}O?$7$?!#%H%C%W%G%#%l%/%H%j$K$"$k(B
-<code>ruby-rhg.tar.gz</code>$B!"(B<code>ruby-rhg.lzh</code>$B!"(B<code>ruby-rhg.zip</code>$B$N$&$A$$$:$l$+(B
-$BET9g$N$h$$$b$N$rA*$s$G$$$?$@$-$?$$!#FbMF$O$I$l$bF1$8$G$"$k!#(B
-$BB>$KK\=q$N%5%]!<%H%5%$%H(B
-\footnote{$BK\=q$N%5%]!<%H%5%$%H(B <code>http://i.loveruby.net/ja/rhg/</code>}$B$+$i$b(B
-$BF~<j2DG=$K$J$C$F$$$k!#(B
+本書で解説するのは<code>ruby</code> 1.7.3 2002-09-12版である。この版は
+アーカイブを添付CD-ROMに収録した。トップディレクトリにある
+<code>ruby-rhg.tar.gz</code>、<code>ruby-rhg.lzh</code>、<code>ruby-rhg.zip</code>のうちいずれか
+都合のよいものを選んでいただきたい。内容はどれも同じである。
+他に本書のサポートサイト
+\footnote{本書のサポートサイト <code>http://i.loveruby.net/ja/rhg/</code>}からも
+入手可能になっている。
 </p>
 
 <p>
-$B$^$?K\=q$N=PHG$K@hN)$A!"0J2<$N$h$&$J%S%k%I4D6-$G%3%s%Q%$%k$H4pK\E*$JF0(B
-$B:n$N3NG'$r9T$C$?!#$3$N%S%k%I%F%9%H$N>\:Y$OE:IU(BCD-ROM$B$N(B
-<code>doc/buildtest.html</code>$B$K5-:\$7$F$"$k!#(B
-$B$?$@$7$3$NI=$K:\$C$F$$$F$b!VF1$84D6-$J$i3N<B$KF0$/!W$H$$$&$o$1$G$O(B
-$B$J$$$7!"(B<code>ruby</code>$B$,F0:n$9$k$3$H$K4X$7$FI.<T$O$$$+$J$kN`$NJ]>Z$b$7$J$$!#(B
+また本書の出版に先立ち、以下のようなビルド環境でコンパイルと基本的な動
+作の確認を行った。このビルドテストの詳細は添付CD-ROMの
+<code>doc/buildtest.html</code>に記載してある。
+ただしこの表に載っていても「同じ環境なら確実に動く」というわけでは
+ないし、<code>ruby</code>が動作することに関して筆者はいかなる類の保証もしない。
 </p>
 
 <ul>
@@ -203,7 +203,7 @@ C$B8@8l$K$D$$$F$O$=$l$J$j$NCN<1$,I,MW$G$"$k!#9=B$BN$r<B9T;~$K(B<code>malloc()<
 <li>Debian GNU/Linux potato/i386</li>
 <li>Debian GNU/Linux woody/i386</li>
 <li>Debian GNU/Linux sid/i386</li>
-<li>FreeBSD 4.4-RELEASE/Alpha$B!JK\=q$N%m!<%+%k%Q%C%A$,I,MW!K(B</li>
+<li>FreeBSD 4.4-RELEASE/Alpha（本書のローカルパッチが必要）</li>
 <li>FreeBSD 4.5-RELEASE/i386</li>
 <li>FreeBSD 4.5-RELEASE/PC98</li>
 <li>FreeBSD 5-CURRENT/i386</li>
@@ -230,49 +230,49 @@ C$B8@8l$K$D$$$F$O$=$l$J$j$NCN<1$,I,MW$G$"$k!#9=B$BN$r<B9T;~$K(B<code>malloc()<
 </ul>
 
 <p>
-$B$3$l$@$1$N?t$N%F%9%H$O$H$F$bI.<T0l?M$G$3$J$;$k$b$N$G$O$J$$!#(B
-$B$3$N%S%k%I%F%9%H$K$"$?$C$F$O0J2<$NJ}!9$KB?Bg$J8f6(NO$rD:$$$?!#(B
-$B$3$3$KL>A0$r5-$746<U$rJ{$2$?$$!#(B
+これだけの数のテストはとても筆者一人でこなせるものではない。
+このビルドテストにあたっては以下の方々に多大な御協力を頂いた。
+ここに名前を記し感謝を捧げたい。
 </p>
 
 <table>
-<tr><td>Tietew$B$5$s(B<td></tr>
-<tr><td>kjana$B$5$s(B<td></tr>
-<tr><td>nyasu$B$5$s(B<td></tr>
-<tr><td>sakazuki$B$5$s(B<td></tr>
-<tr><td>$B$5$H$&$^$5$R$m$5$s(B<td></tr>
-<tr><td>$B$?$`$i$1$s$$$A$5$s(B<td></tr>
-<tr><td>$B$b$j$-$e$&$5$s(B<td></tr>
-<tr><td>$B2CF#M&Li$5$s(B<td></tr>
-<tr><td>$B5WJ]7rMN$5$s(B<td></tr>
-<tr><td>$B8eF#8,B@O:$5$s(B<td></tr>
-<tr><td>$B2<B<CRG7$5$s(B<td></tr>
-<tr><td>$B=uED2m5*$5$s(B<td></tr>
-<tr><td>$B?70f9/;J$5$s(B<td></tr>
-<tr><td>$B@>;3OB9-$5$s(B<td></tr>
-<tr><td>$B@nO)?.Li$5$s(B<td></tr>
-<tr><td>$BEOJUE/Li$5$s(B<td></tr>
-<tr><td>$BF#K\>0K.$5$s(B<td></tr>
+<tr><td>Tietewさん<td></tr>
+<tr><td>kjanaさん<td></tr>
+<tr><td>nyasuさん<td></tr>
+<tr><td>sakazukiさん<td></tr>
+<tr><td>さとうまさひろさん<td></tr>
+<tr><td>たむらけんいちさん<td></tr>
+<tr><td>もりきゅうさん<td></tr>
+<tr><td>加藤勇也さん<td></tr>
+<tr><td>久保健洋さん<td></tr>
+<tr><td>後藤謙太郎さん<td></tr>
+<tr><td>下村智之さん<td></tr>
+<tr><td>助田雅紀さん<td></tr>
+<tr><td>新井康司さん<td></tr>
+<tr><td>西山和広さん<td></tr>
+<tr><td>川路信也さん<td></tr>
+<tr><td>渡辺哲也さん<td></tr>
+<tr><td>藤本尚邦さん<td></tr>
 </table>
 
 <p>
-$B$?$@$7!"$3$N%F%9%H$K4X$9$kA4@UG$$OI.<T$K$"$k!#0J>e$NJ}!9$K(B
-$B%3%s%?%/%H$r$H$k$h$&$J$3$H$O@dBP$K$7$J$$$G$$$?$@$-$?$$!#(B
-$B$b$72?$+IT6q9g$,$"$l$PI.<T$^$GD>@\%a!<%k$rAw$C$F$/$@$5$k$h$&(B
-\footnote{$BI.<T$N%a!<%k%"%I%l%9(B <code>aamine@loveruby.net</code>}$B$*4j$$$9$k!#(B
+ただし、このテストに関する全責任は筆者にある。以上の方々に
+コンタクトをとるようなことは絶対にしないでいただきたい。
+もし何か不具合があれば筆者まで直接メールを送ってくださるよう
+\footnote{筆者のメールアドレス <code>aamine@loveruby.net</code>}お願いする。
 </p>
 
 
 
 
-<h2>$B%&%'%V%5%$%H(B</h2>
+<h2>ウェブサイト</h2>
 
 <p>
-$BK\=q$N%&%'%V%5%$%H$O(B<code>http://i.loveruby.net/ja/rhg/</code>$B$G$"$k!#(B
-$B4XO"%W%m%0%i%`$K4X$9$k>pJs$dDI2CJ8=q!"(B
-$B$=$l$K8m?#$J$I$,$"$l$PC`0l$3$3$K:\$;$F$$$/!#$^$?=PHG$H(B
-$BF1;~$KK\=q;O$a$N?t>O$r8x3+$9$kM=Dj$G$"$k!#$=$N8e$b=g<!;~4|$r(B
-$B8+$F8x3+$7!":G=*E*$K$OA4J88x3+$9$k$3$H$r9M$($F$$$k!#(B
+本書のウェブサイトは<code>http://i.loveruby.net/ja/rhg/</code>である。
+関連プログラムに関する情報や追加文書、
+それに誤殖などがあれば逐一ここに載せていく。また出版と
+同時に本書始めの数章を公開する予定である。その後も順次時期を
+見て公開し、最終的には全文公開することを考えている。
 </p>
 
 
@@ -280,76 +280,76 @@ C$B8@8l$K$D$$$F$O$=$l$J$j$NCN<1$,I,MW$G$"$k!#9=B$BN$r<B9T;~$K(B<code>malloc()<
 
 
 
-<h2>$B<U<-(B</h2>
+<h2>謝辞</h2>
 
 <p>
-$BC/$h$j$b$^$:!"$^$D$b$H$f$-$R$m$5$s$K46<U$7$^$9!#(BRuby$B$r:n$C$F$/$@$5$C$?(B
-$B$3$H!"$=$l$r%*!<%W%s%=!<%9%=%U%H%&%'%"$H$7$F8x3+$7$F$/$@$5$C$?$3$H!"(B
-<code>ruby</code>$B$r2r@O$9$kK\$r=P$9$N$r2w$/N;2r$7$F$/$@$5$C$?$P$+$j$+(B
-$B4F=$$^$G0z$-<u$1$F$$$?$@$$$?$3$H!"$D$$$G$K8@$&$H(B
-$B%U%m%j%@$GF1;~DLLu$r$7$F$b$i$C$?$3$H!"$J$I$J$I!"$*Ni$r8@$$$?$$$3$H$O;3(B
-$B$[$I$"$k$N$G$9$,!"$"$^$j$KB?$9$.$F8@$$@Z$l$^$;$s!#$=$NBe$o$j$K$3$NK\$r(B
-$BB#$j$^$9!#(B
+誰よりもまず、まつもとゆきひろさんに感謝します。Rubyを作ってくださった
+こと、それをオープンソースソフトウェアとして公開してくださったこと、
+<code>ruby</code>を解析する本を出すのを快く了解してくださったばかりか
+監修まで引き受けていただいたこと、ついでに言うと
+フロリダで同時通訳をしてもらったこと、などなど、お礼を言いたいことは山
+ほどあるのですが、あまりに多すぎて言い切れません。その代わりにこの本を
+贈ります。
 </p>
 
 <p>
-$B<!$K!"$3$NK\$N=PHG$r:G=i$KDs0F$7$F$/$l$?(Barton$B$5$s$K46<U$7$^$9!#(Barton$B$5(B
-$B$s$N8@MU$K$O$$$D$G$b1F6A$5$l$C$Q$J$7$G$9!#$*$+$2$G(B.NET$B$J%^%7%s$,M_$7(B
-$B$/$J$C$F$7$+$?$J$$$8$c$J$$$G$9$+!#(B
+次に、この本の出版を最初に提案してくれたartonさんに感謝します。artonさ
+んの言葉にはいつでも影響されっぱなしです。おかげで.NETなマシンが欲し
+くなってしかたないじゃないですか。
 </p>
 
 <p>
-Ruby$B3&$N%I%-%e%a%s%HBbD9!&?70f9/;J$5$s$K$O!"$$$D$N4V$K(B
-$B$3$NK\$NJT=8C4Ev$K="?&$7$?$N$@$m$&$H;W$&$[$ILJL)$J::FI$r(B
-$B$7$F$$$?$@$-$^$7$?!#$"$j$,$H$&$4$6$$$^$7$?!#(B
+Ruby界のドキュメント隊長・新井康司さんには、いつの間に
+この本の編集担当に就職したのだろうと思うほど綿密な査読を
+していただきました。ありがとうございました。
 </p>
 
 <p>
-$B$^$?<9I.Cf$K$OK\Ev$KB?$/$NJ}!9$+$i%3%a%s%H$d4V0c$$$N;XE&!"(B
-$B9=@.$NDs0F$rD:$-$^$7$?!#(B
-Tietew$B$5$s!"(B
-Yuya$B$5$s!"(B
-$B$+$o$8$5$s!"(B
-$B$4$H$1$s$5$s!"(B
-$B$?$`$i$5$s!"(B
-$B$U$J$P$5$s!"(B
-$B$b$j$-$e$&$5$s!"(B
-$B@PDM$5$s!"(B
-$B2<B<$5$s!"(B
-$B5WJ]$5$s!"(B
-$B=uED$5$s!"(B
-$B@>;3$5$s!"(B
-$BF#K\$5$s!"(B
-$BLx@n$5$s!"(B
-$B$b$7H4$1$,$"$C$?$i$4$a$s$J$5$$!#(B
-$BA4$F$NJ}!9$N8f6(NO$K46<U$7$^$9!#(B
+また執筆中には本当に多くの方々からコメントや間違いの指摘、
+構成の提案を頂きました。
+Tietewさん、
+Yuyaさん、
+かわじさん、
+ごとけんさん、
+たむらさん、
+ふなばさん、
+もりきゅうさん、
+石塚さん、
+下村さん、
+久保さん、
+助田さん、
+西山さん、
+藤本さん、
+柳川さん、
+もし抜けがあったらごめんなさい。
+全ての方々の御協力に感謝します。
 </p>
 
 <p>
-$B:G8e$K$J$j$^$7$?$,!"BgDM$5$s!"=UED$5$s!"6b8w$5$s!";MEY$KEO$kDy@ZGK$j$H(B
-200$B%Z!<%8$N869FD62a$K$b$a$2$::G8e$^$GIU$-9g$C$F$/$@$5$C$F(B
-$B$"$j$,$H$&$4$6$$$^$7$?!#(B
+最後になりましたが、大塚さん、春田さん、金光さん、四度に渡る締切破りと
+200ページの原稿超過にもめげず最後まで付き合ってくださって
+ありがとうございました。
 </p>
 
 <p>
-$B$3$NK\$K4X$C$??M$9$Y$F$NL>A0$r$3$3$G5s$2$k$3$H$O$G$-$^$;$s$,!"(B
-$B$_$J$5$s$NNO$,$J$1$l$P$3$NK\$O=PHG$G$-$^$;$s$G$7$?!#$3$N>l$r(B
-$B$*<Z$j$7$FA4$F$NJ}$K46<U$7$^$9!#K\Ev$K$"$j$,$H$&$4$6$$$^$7$?!#(B
+この本に関った人すべての名前をここで挙げることはできませんが、
+みなさんの力がなければこの本は出版できませんでした。この場を
+お借りして全ての方に感謝します。本当にありがとうございました。
 </p>
 
 <p class="right"
-$B@DLZJvO:(B
+青木峰郎
 </p>
 
 <hr>
 <p>
-$B8f0U8+!&8f46A[!&8m?#$N;XE&$J$I$O(B
-<a href="mailto:aamine@loveruby.net">$B@DLZJvO:(B &lt;aamine@loveruby.net&gt;</a>
-$B$^$G$*4j$$$7$^$9!#(B
+御意見・御感想・誤殖の指摘などは
+<a href="mailto:aamine@loveruby.net">青木峰郎 &lt;aamine@loveruby.net&gt;</a>
+までお願いします。
 </p>
 <p>
-<a href="http://direct.ips.co.jp/directsys/go_x_TempChoice.cfm?sh_id=EE0040&amp;spm_id=1&amp;GM_ID=1721">$B!X(BRuby$B%=!<%9%3!<%I40A42r@b!Y(B
-$B$O%$%s%W%l%9%@%$%l%/%H$G8fM=Ls!&8f9XF~$$$?$@$1$^$9(B ($B=q@R>R2p%Z!<%8$XHt$S$^$9(B)$B!#(B</a>
+<a href="http://direct.ips.co.jp/directsys/go_x_TempChoice.cfm?sh_id=EE0040&amp;spm_id=1&amp;GM_ID=1721">『Rubyソースコード完全解説』
+はインプレスダイレクトで御予約・御購入いただけます (書籍紹介ページへ飛びます)。</a>
 </p>
 <p>Copyright (c) 2002-2004 Minero Aoki, All rights reserved.</p>
 
